@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale-1.0">
+        <title>Productos alimenticios</title> 
+    </head>
+    <body>
+        <script type="text/javascript">
+            /* Estructura del objeto "Producto_alimenticio" con sus respectivas propiedades
+               (código, nombre y precio) */
+           function Producto_alimenticio(code, name, price) {
+               this.code = code;
+               this.name = name;
+               this.price = price;
+               this.imprimeDatos = imprimeDatos;
+           }
+           /* Estructura del método "imprimeDatos" para que arroje por pantalla los valores 
+           de las propiedades de "Producto_alimenticio" */
+           function imprimeDatos() {
+               document.write("<br> Código: " + this.code);
+               document.write("<br> Nombre: " + this.name);
+               document.write("<br> Precio: " + this.price);
+               document.write("<br> ");
+           }
+           // Instancias del objeto guardadas en un array de producto "product"
+           var product = new Array();
+           product[0] = new Producto_alimenticio("1040", "Harina", "2.10");
+           product[1] = new Producto_alimenticio("1042", "Café", "1.20");
+           product[2] = new Producto_alimenticio("1044", "Azúcar", "1.50");
+           /* Bucle repetitivo "for" para que muestre por pantalla los valores
+           de los objetos instanciados a través de "imprimeDatos" */
+           for(var i=0; i < product.length; i=i+1) {
+               product[i].imprimeDatos();
+           }
+        </script>
+    </body>
+    </html>
